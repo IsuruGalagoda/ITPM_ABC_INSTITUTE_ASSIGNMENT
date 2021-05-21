@@ -5,6 +5,10 @@
  */
 package itpm;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -26,8 +30,139 @@ public class AddSession extends javax.swing.JFrame {
         jLabel14.setVisible(false);
         jLabel5.setVisible(false);
         jLabel2.setVisible(false);
+        
+        getTags();;
+        getStudent();
+        getLectures();
+        getGroup();
+        getSubject();
     }
+    
+    
+    
+    private void getTags(){
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+            combotag.removeAllItems();
 
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/institutemanageslitt", "root", "");
+            
+                Statement statement = connection.createStatement();
+                String query = "SELECT * FROM tags";
+                ResultSet rs = statement.executeQuery(query);
+
+                while (rs.next())
+                {                             
+                   combotag.addItem(rs.getString("Tag_name"));
+                }//end while
+            
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void getStudent(){
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+            combonoofstudents.removeAllItems();
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/institutemanageslitt", "root", "");
+            
+                Statement statement = connection.createStatement();
+                String query = "SELECT COUNT(*) as sumStudent FROM student";
+                ResultSet rs = statement.executeQuery(query);
+                
+                if(rs.next()){
+//                    JOptionPane.showMessageDialog(this,"count "+ rs.getString("sumStudent"));  
+                    for(int i=1 ;i< Integer.parseInt(rs.getString("sumStudent")); i++){
+                        combonoofstudents.addItem(String.valueOf(i));
+                    }
+                }
+       
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void getLectures(){
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+            combolecture2.removeAllItems();
+            combolecture1.removeAllItems();
+            jComboBox6.removeAllItems();
+            
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/institutemanageslitt", "root", "");
+            
+                Statement statement = connection.createStatement();
+                String query = "SELECT * FROM lecturedetails";
+                ResultSet rs = statement.executeQuery(query);
+
+                while (rs.next())
+                {                             
+                   combolecture2.addItem(rs.getString("lecname"));
+                   combolecture1.addItem(rs.getString("lecname"));
+                   jComboBox6.addItem(rs.getString("lecname"));
+                }//end while
+            
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void getGroup(){
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+            combogroup1.removeAllItems();
+            
+            
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/institutemanageslitt", "root", "");
+            
+                Statement statement = connection.createStatement();
+                String query = "SELECT * FROM student";
+                ResultSet rs = statement.executeQuery(query);
+
+                while (rs.next())
+                {                             
+                   combogroup1.addItem(rs.getString("Generate ID"));
+                  
+                }//end while
+            
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void getSubject(){
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+            combosubject.removeAllItems();
+            
+            
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/institutemanageslitt", "root", "");
+            
+                Statement statement = connection.createStatement();
+                String query = "SELECT * FROM subjectdetails";
+                ResultSet rs = statement.executeQuery(query);
+
+                while (rs.next())
+                {                             
+                   combosubject.addItem(rs.getString("subname"));
+                  
+                }//end while
+            
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,8 +198,8 @@ public class AddSession extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        lebel144 = new javax.swing.JLabel();
+        lebel154 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,9 +262,14 @@ public class AddSession extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Select Group");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
 
         combosubject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Sub1", "Sub2", "Sub3" }));
+        combosubject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combosubjectActionPerformed(evt);
+            }
+        });
         getContentPane().add(combosubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 150, 30));
 
         combonoofstudents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "1", "2", "3", "4", "5", "6" }));
@@ -154,11 +294,15 @@ public class AddSession extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(124, 221, 250));
         jLabel16.setText("Add Session");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 150, 30));
 
         combolecture2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Lec1", "Lec2", "Lec3" }));
@@ -209,13 +353,10 @@ public class AddSession extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 40));
 
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/676549.jpg"))); // NOI18N
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 640, 400));
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/a_1.jpeg"))); // NOI18N
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 520));
+        lebel144.setBackground(new java.awt.Color(255, 255, 255));
+        lebel144.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
+        getContentPane().add(lebel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 640, 400));
+        getContentPane().add(lebel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 520));
 
         setSize(new java.awt.Dimension(708, 556));
         setLocationRelativeTo(null);
@@ -333,6 +474,14 @@ public class AddSession extends javax.swing.JFrame {
         al.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void combosubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combosubjectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combosubjectActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -387,15 +536,15 @@ public class AddSession extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lebel144;
+    private javax.swing.JLabel lebel154;
     // End of variables declaration//GEN-END:variables
 }

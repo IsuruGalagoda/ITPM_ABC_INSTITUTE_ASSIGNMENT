@@ -84,7 +84,6 @@ public class ManageLecturer extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 420, 110, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(124, 221, 250));
         jLabel1.setText("Manage Lecturer");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 180, 40));
 
@@ -188,11 +187,8 @@ public class ManageLecturer extends javax.swing.JFrame {
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/676549.jpg"))); // NOI18N
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 970, 450));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Best-universities-in-Australia-for-international-undergraduate-students-in-2020-ranking.jpg"))); // NOI18N
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 560));
 
         setSize(new java.awt.Dimension(995, 597));

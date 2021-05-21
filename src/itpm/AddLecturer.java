@@ -53,8 +53,8 @@ public class AddLecturer extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        lebel1 = new javax.swing.JLabel();
+        lebel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,7 +79,6 @@ public class AddLecturer extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(30, 144, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(124, 221, 250));
         jLabel1.setText("Add Lecturer");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
@@ -156,11 +155,11 @@ public class AddLecturer extends javax.swing.JFrame {
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "department1", "department2", "department3" }));
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 150, 30));
 
-        jLabel15.setBackground(new java.awt.Color(192, 192, 192));
-        jLabel15.setForeground(new java.awt.Color(192, 192, 192));
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 650, 360));
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 670, 490));
+        lebel1.setBackground(new java.awt.Color(192, 192, 192));
+        lebel1.setForeground(new java.awt.Color(192, 192, 192));
+        lebel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
+        getContentPane().add(lebel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 650, 360));
+        getContentPane().add(lebel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 670, 490));
 
         setSize(new java.awt.Dimension(685, 520));
         setLocationRelativeTo(null);
@@ -313,8 +312,6 @@ public class AddLecturer extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -328,6 +325,8 @@ public class AddLecturer extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lebel1;
+    private javax.swing.JLabel lebel2;
     // End of variables declaration//GEN-END:variables
 
     

@@ -74,7 +74,6 @@ public class AddSubject extends javax.swing.JFrame {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 130, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(124, 221, 250));
         jLabel1.setText("Add Subject");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
@@ -146,11 +145,8 @@ public class AddSubject extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 100, 40));
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/676549.jpg"))); // NOI18N
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 720, 390));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/a.jpeg"))); // NOI18N
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 500));
 
         setSize(new java.awt.Dimension(756, 542));

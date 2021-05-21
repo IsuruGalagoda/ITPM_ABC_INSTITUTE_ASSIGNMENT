@@ -73,7 +73,6 @@ public class ManageSessions extends javax.swing.JFrame {
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 130, 60));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(124, 221, 250));
         jLabel1.setText("Manage Sessions");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 160, 30));
 
@@ -159,11 +158,8 @@ public class ManageSessions extends javax.swing.JFrame {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 160, 30));
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/676549.jpg"))); // NOI18N
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 980, 410));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Best-universities-in-Australia-for-international-undergraduate-students-in-2020-ranking.jpg"))); // NOI18N
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 530));
 
         setSize(new java.awt.Dimension(995, 567));

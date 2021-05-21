@@ -85,7 +85,7 @@ public class ManageSubject extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 150, 70));
 
         jButton5.setBackground(new java.awt.Color(30, 144, 255));
-        jButton5.setText("Add Session");
+        jButton5.setText("Add Subject");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -94,7 +94,6 @@ public class ManageSubject extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 90, 160, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(124, 221, 250));
         jLabel1.setText("Manage Subject");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 160, 30));
 
@@ -190,11 +189,8 @@ public class ManageSubject extends javax.swing.JFrame {
         getContentPane().add(jSpinner4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 180, 30));
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itpmpro/676549.jpg"))); // NOI18N
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(244, 251, 19), 4));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 980, 450));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Best-universities-in-Australia-for-international-undergraduate-students-in-2020-ranking.jpg"))); // NOI18N
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 580));
 
         setSize(new java.awt.Dimension(995, 625));
